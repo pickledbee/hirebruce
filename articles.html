@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6X69B3C7NF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6X69B3C7NF');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Articles | Hire Bruce, the AI Whisperer for Non-Tech People</title>
+<meta name="description" content="Plain-language guides for small businesses, nonprofits and tutoring centers: what to automate, what busywork really costs, and how simple tools like Google Sheets can save hours every week.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: same night-sky header as the homepage, then a calm reading page: an article index of cards, followed by long-form articles at a comfortable reading width. */
+  --night: #0a1424;
+  --night-2: #12223a;
+  --ink: #101a29;
+  --muted: #566476;
+  --paper: #f3f5f8;
+  --white: #ffffff;
+  --line: #e1e6ec;
+  --amber: #f6a623;
+  --coral: #ff6a4d;
+  --teal: #17b3a3;
+  --blue: #2f74e0;
+  --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 420px) { .wrap { padding: 0 16px; } }
+h1, h2, h3 { font-family: var(--display); letter-spacing: -0.02em; text-wrap: balance; }
+.grad { background: linear-gradient(100deg, var(--amber), var(--coral) 55%, #ff4f8b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Nav */
+.nav { position: sticky; top: 0; z-index: 50; background: rgba(10,20,36,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,0.08); color: #fff; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.03em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.brand i { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg, var(--amber), var(--coral)); display: grid; place-items: center; font-style: normal; font-size: 0.95rem; color: var(--night); }
+.nav ul { list-style: none; display: flex; gap: 6px; flex-wrap: wrap; margin: 0; padding: 0; font-size: 0.9rem; font-weight: 500; }
+.nav ul a { text-decoration: none; padding: 7px 12px; border-radius: 999px; opacity: 0.82; }
+.nav ul a:hover { opacity: 1; background: rgba(255,255,255,0.1); }
+.nav ul a.on { opacity: 1; background: rgba(255,255,255,0.14); }
+.nav ul a.cta { background: var(--amber); color: var(--night); opacity: 1; font-weight: 700; }
+.nav ul { align-items: center; line-height: 1.4; }
+.nav ul li { display: flex; }
+@media (min-width: 701px) { .nav ul { flex-wrap: nowrap; white-space: nowrap; } }
+@media (max-width: 700px) { .nav ul li.hide-sm { display: none; } }
+
+/* Header */
+.top { position: relative; overflow: hidden; background: var(--night); color: #fff; padding: 72px 0 64px; }
+.top::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 10% 10%, rgba(246,166,35,0.35), transparent 60%), radial-gradient(50% 70% at 90% 20%, rgba(255,106,77,0.3), transparent 60%), radial-gradient(60% 80% at 60% 110%, rgba(23,179,163,0.3), transparent 60%); pointer-events: none; }
+.top .wrap { position: relative; }
+.kicker { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
+.top h1 { font-weight: 800; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1; margin: 10px 0 18px; letter-spacing: -0.035em; }
+.top p { margin: 0; max-width: 58ch; color: rgba(255,255,255,0.8); font-size: 1.12rem; }
+
+/* Index cards */
+.index { padding: 56px 0 24px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+.card { display: flex; flex-direction: column; text-decoration: none; background: var(--white); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 18px; padding: 22px 24px; transition: transform .25s, box-shadow .25s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -24px rgba(16,26,41,0.35); }
+.card .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c); }
+.card h2 { font-size: 1.28rem; font-weight: 800; line-height: 1.2; margin: 6px 0 8px; }
+.card p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; line-height: 1.55; }
+.card .go { margin-top: auto; font-weight: 700; font-size: 0.92rem; color: var(--c); }
+.card .mins { font-size: 0.8rem; color: var(--muted); font-weight: 600; margin-left: 8px; }
+
+/* Articles */
+article { padding: 56px 0; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+article:nth-of-type(even) { background: var(--white); }
+.read { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 420px) { .read { padding: 0 16px; } }
+article .tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c); }
+article h2 { font-weight: 800; font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.08; margin: 8px 0 14px; }
+article .dek { font-size: 1.2rem; color: var(--muted); margin: 0 0 28px; line-height: 1.55; }
+article h3 { font-size: 1.35rem; font-weight: 800; margin: 34px 0 8px; line-height: 1.2; }
+article p { margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 20px; padding-left: 24px; }
+article li { margin: 6px 0; }
+article li b, article p b { color: var(--ink); }
+.callout { background: var(--paper); border-left: 4px solid var(--c); border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 24px 0; font-size: 1.02rem; }
+article:nth-of-type(odd) .callout { background: var(--white); }
+.math { font-family: var(--display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.cta-box { margin-top: 32px; background: var(--night); color: #fff; border-radius: 18px; padding: 24px 26px; display: flex; gap: 16px 24px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.cta-box p { margin: 0; color: rgba(255,255,255,0.85); font-size: 1rem; max-width: 42ch; }
+.cta-box p b { color: #fff; }
+.btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; padding: 13px 22px; border-radius: 12px; background: linear-gradient(100deg, var(--amber), var(--coral)); color: var(--night); white-space: nowrap; }
+.back { display: inline-block; margin-top: 18px; font-size: 0.9rem; font-weight: 600; color: var(--muted); }
+
+footer { background: #060d18; color: rgba(255,255,255,0.55); padding: 22px 0; font-size: 0.85rem; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+footer a { color: rgba(255,255,255,0.75); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .card { transition: none; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="index.html"><i>HB</i>HireBruce.com</a>
+    <ul>
+      <li class="hide-sm"><a href="index.html#who">Who I Help</a></li>
+      <li class="hide-sm"><a href="index.html#business">Services</a></li>
+      <li class="hide-sm"><a href="index.html#calculator">Time Calculator</a></li>
+      <li><a class="on" href="articles.html" aria-current="page">Articles</a></li>
+      <li><a class="cta" href="index.html#request">Free Consultation</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <div class="kicker">Articles</div>
+    <h1>Plain-language guides to <span class="grad">working smarter.</span></h1>
+    <p>No tech terms and no sales pitch. Just practical ideas for small businesses, nonprofits and tutoring centers that want to spend less time on busywork.</p>
+  </div>
+</header>
+
+<main>
+<section class="index" aria-label="All articles">
+  <div class="wrap">
+    <div class="cards">
+      <a class="card" style="--c:#ff6a4d" href="#ai-whisperer"><span class="tag">Getting started <span class="mins">5 min read</span></span><h2>What an "AI Whisperer" Actually Does, and Why You Don't Need to Learn AI Yourself</h2><p>You don't have to become a tech expert to get the benefits. You just need someone who speaks both languages.</p><span class="go">Read article &rarr;</span></a>
+      <a class="card" style="--c:#2f74e0" href="#stop-by-hand"><span class="tag">Small business <span class="mins">6 min read</span></span><h2>7 Tasks Every Small Business Should Stop Doing by Hand</h2><p>If you do it every week and it follows the same steps, it's a good candidate to run on its own.</p><span class="go">Read article &rarr;</span></a>
+      <a class="card" style="--c:#17b3a3" href="#busywork-math"><span class="tag">Time and money <span class="mins">4 min read</span></span><h2>How Much Is Busywork Really Costing You? A Simple Math Check</h2><p>Three hours a week doesn't sound like much until you multiply it by 52.</p><span class="go">Read article &rarr;</span></a>
+      <a class="card" style="--c:#f6a623" href="#google-sheets"><span class="tag">Tools <span class="mins">6 min read</span></span><h2>Google Sheets Can Run More of Your Business Than You Think</h2><p>The spreadsheet you already use can send emails, set reminders and build reports for you.</p><span class="go">Read article &rarr;</span></a>
+      <a class="card" style="--c:#0f9b8c" href="#website-works"><span class="tag">Cleaning and landscaping <span class="mins">5 min read</span></span><h2>Your Website Should Work While You're on the Job</h2><p>Missed calls are missed jobs. Here's how a simple quote form keeps the work coming in.</p><span class="go">Read article &rarr;</span></a>
+      <a class="card" style="--c:#9b5cf6" href="#tutoring-schedule"><span class="tag">Tutoring centers <span class="mins">5 min read</span></span><h2>Ending the Schedule-Change Text Chaos at Your Tutoring Center</h2><p>How to stop being the human switchboard for every reschedule, absence and payment.</p><span class="go">Read article &rarr;</span></a>
+      <a class="card" style="--c:#c2410c" href="#nonprofit-report"><span class="tag">Nonprofits <span class="mins">5 min read</span></span><h2>Nonprofits: Stop Building the Same Report Every Month</h2><p>When your information lives in one place, the report can build itself.</p><span class="go">Read article &rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<article id="ai-whisperer" style="--c:#ff6a4d">
+  <div class="read">
+    <div class="tag">Getting started</div>
+    <h2>What an "AI Whisperer" Actually Does, and Why You Don't Need to Learn AI Yourself</h2>
+    <p class="dek">AI tools can save you hours every week. But figuring out which tool to use, and how to set it up so it actually helps, is a job of its own. That's where I come in.</p>
+
+    <p>Every week there's another headline about artificial intelligence. Some people are excited, some are nervous, and a lot of busy business owners are simply tired. They've heard AI can help, but they don't have the time to sit through tutorials, learn new software or figure out what a "prompt" is.</p>
+    <p>Here's the good news: you don't need to. Using AI well is a lot like using a car. You don't need to understand the engine to get where you're going. You just need it to start every morning, and someone you trust to keep it running.</p>
+
+    <h3>So what is an "AI whisperer"?</h3>
+    <p>It's someone who speaks two languages: yours and the computer's. You describe the problem the way you'd explain it to a friend. "I spend every Sunday night texting families about schedule changes." "I copy the same information from emails into a spreadsheet all week." My job is to turn that into something that works, using AI and other tools behind the scenes.</p>
+    <p>In practice, that means four things:</p>
+    <ol>
+      <li><b>Listening.</b> We start with what's frustrating you, not with technology. The best solution is often simpler than people expect.</li>
+      <li><b>Translating.</b> I figure out which tools fit your problem, your budget and the software you already use.</li>
+      <li><b>Building and testing.</b> I set it up and test it with sample information before it ever touches your real customers.</li>
+      <li><b>Explaining.</b> I walk you through it in plain language, so you understand what it does and feel comfortable using it.</li>
+    </ol>
+
+    <h3>What AI is good at, and what it isn't</h3>
+    <p>AI is very good at repetitive, well-defined work: sorting information, drafting routine messages, summarizing long notes, filling in forms and moving details from one place to another. It works fast and it never gets bored.</p>
+    <p>It is not good at judgment, relationships or knowing your business the way you do. That's why every system I build keeps you in charge. The computer handles the busywork. You make the decisions.</p>
+    <div class="callout">A good rule of thumb: if a task follows the same steps every time and doesn't need your personal judgment, it's probably a good candidate for automation.</div>
+
+    <h3>You won't need to learn anything new</h3>
+    <p>Many of the tools I build run inside programs you already know, like Google Sheets and Gmail. There's no complicated new software to learn and no new password to remember. Often the only change you'll notice is that a chore you used to do by hand now just gets done.</p>
+
+    <h3>Where to start</h3>
+    <p>Don't try to automate your whole business at once. Pick one task, the one you dread most or the one that eats the most time every week. Fix that first, see the difference, and build from there.</p>
+
+    <div class="cta-box"><p><b>What's one task you wish you never had to do by hand again?</b> Tell me about it in a free 15-minute consultation.</p><a class="btn" href="index.html#request">Book a free consultation &rarr;</a></div>
+    <a class="back" href="#top">Back to all articles</a>
+  </div>
+</article>
+
+<article id="stop-by-hand" style="--c:#2f74e0">
+  <div class="read">
+    <div class="tag">Small business</div>
+    <h2>7 Tasks Every Small Business Should Stop Doing by Hand</h2>
+    <p class="dek">If you do it every week and it follows the same steps every time, it can probably run on its own. Here are the seven I see most often.</p>
+
+    <p>Most small business owners didn't start their business to do paperwork. Yet a big part of the week disappears into small, repetitive tasks that each take "just a few minutes." Here are seven of the most common ones, and what they look like once they're automated.</p>
+
+    <h3>1. Retyping information from emails</h3>
+    <p>A customer emails a request, and you copy their name, phone number and details into a spreadsheet. It's quick, until you do it thirty times a week and make a typo in someone's phone number. <b>Automated:</b> requests come in through a form and land in your spreadsheet already filled in, with no copying and no typos.</p>
+
+    <h3>2. Sending appointment reminders</h3>
+    <p>Reminders cut down on no-shows, but sending them one by one is tedious and easy to forget on a busy day. <b>Automated:</b> every customer gets a friendly reminder the day before, every time, without you lifting a finger.</p>
+
+    <h3>3. Chasing late payments</h3>
+    <p>Nobody likes asking for money, so it's easy to put off. <b>Automated:</b> a polite reminder goes out when an invoice is a set number of days late, and you can see at a glance who has paid and who hasn't.</p>
+
+    <h3>4. Answering the same questions over and over</h3>
+    <p>"What are your hours?" "Do you serve my area?" "How much does it cost?" <b>Automated:</b> a clear website and an automatic reply answer the common questions right away, so you only handle the ones that need you.</p>
+
+    <h3>5. Building the same weekly report</h3>
+    <p>If you pull the same numbers together every Monday, that's a sign the computer should be doing it. <b>Automated:</b> a short summary of your income, jobs and appointments lands in your inbox every week on its own.</p>
+
+    <h3>6. The scheduling back-and-forth</h3>
+    <p>"Does Tuesday work?" "How about Thursday?" Five messages later, you've booked one appointment. <b>Automated:</b> customers pick an open time from your calendar themselves, and it's booked with no double-booking.</p>
+
+    <h3>7. Forgetting to follow up on quotes</h3>
+    <p>You send a quote, life gets busy, and the customer hires someone else because nobody followed up. <b>Automated:</b> you get a reminder to follow up after a few days, or a friendly check-in email goes out for you.</p>
+
+    <div class="callout">You don't need to fix all seven. Pick the one that bugs you most. Fixing a single task often frees up an hour or more every week.</div>
+
+    <div class="cta-box"><p><b>Recognize a few of these?</b> Tell me which one is eating your time, and I'll show you what a simpler version could look like.</p><a class="btn" href="index.html#request">Get a free consultation &rarr;</a></div>
+    <a class="back" href="#top">Back to all articles</a>
+  </div>
+</article>
+
+<article id="busywork-math" style="--c:#17b3a3">
+  <div class="read">
+    <div class="tag">Time and money</div>
+    <h2>How Much Is Busywork Really Costing You? A Simple Math Check</h2>
+    <p class="dek">A few hours a week doesn't sound like much. But small chores add up fast, and the real cost is bigger than the clock shows.</p>
+
+    <p>Ask any business owner how long they spend on paperwork and you'll usually hear "Oh, not that much." Then they start listing it out: scheduling, invoices, reminders, copying information, answering the same emails. It's often more than they thought.</p>
+
+    <h3>The simple formula</h3>
+    <p>Here's a quick way to see what one repetitive task really costs you in a year:</p>
+    <p class="math">Hours per week &times; what an hour is worth &times; 52 weeks</p>
+    <p>Say you spend 3 hours a week on scheduling, and an hour of your time is worth $25:</p>
+    <p class="math">3 &times; $25 &times; 52 = $3,900 a year</p>
+    <p>That's 156 hours, nearly four full 40-hour work weeks spent on one task. If two people on your team do it, double it.</p>
+    <div class="callout">This is the time the task takes now, not a guaranteed savings. Some tasks can be fully automated and some only partly. But the math shows you where it's worth looking first.</div>
+
+    <h3>The costs the formula doesn't show</h3>
+    <ul>
+      <li><b>Mistakes.</b> Retyping information by hand leads to typos, missed appointments and invoices that never get sent.</li>
+      <li><b>Slow replies.</b> When you're buried in paperwork, new customers wait longer to hear back, and some won't wait at all.</li>
+      <li><b>Lost evenings.</b> A lot of busywork happens after hours. That's time you could spend with your family or resting.</li>
+      <li><b>Growth you can't take on.</b> If every new customer adds more paperwork, growing the business just means more late nights.</li>
+    </ul>
+
+    <h3>Which task should you fix first?</h3>
+    <p>Look for a task that checks all three of these boxes:</p>
+    <ol>
+      <li><b>It happens often,</b> every day or every week.</li>
+      <li><b>It follows the same steps</b> each time.</li>
+      <li><b>It's frustrating,</b> the kind of thing you put off.</li>
+    </ol>
+    <p>That task is usually your best place to start. It's the one where you'll notice the difference fastest.</p>
+
+    <div class="cta-box"><p><b>Try it with your own numbers.</b> My free time calculator does the math for you in a few seconds.</p><a class="btn" href="index.html#calculator">Open the time calculator &rarr;</a></div>
+    <a class="back" href="#top">Back to all articles</a>
+  </div>
+</article>
+
+<article id="google-sheets" style="--c:#f6a623">
+  <div class="read">
+    <div class="tag">Tools</div>
+    <h2>Google Sheets Can Run More of Your Business Than You Think</h2>
+    <p class="dek">Most people use Google Sheets as a digital notepad. With a little setup, it can send emails, set reminders and build your reports for you.</p>
+
+    <p>If you have a Gmail account, you already have Google Sheets, and it's free. Most people use it to keep lists. What many don't know is that Google includes a built-in way to make Sheets do work on its own. With the right setup, your spreadsheet can act like a small, custom piece of software made just for your business.</p>
+
+    <h3>Six things Google Sheets can do for you</h3>
+    <ol>
+      <li><b>Collect information from a form.</b> Customers fill out a form on your website, and their answers drop straight into your sheet, neatly organized.</li>
+      <li><b>Send emails automatically.</b> Confirmations, thank-yous, welcome messages and follow-ups can go out the moment something new is added.</li>
+      <li><b>Send reminders on the right day.</b> Appointment reminders, payment reminders or renewal notices go out based on dates in your sheet.</li>
+      <li><b>Build reports by itself.</b> Weekly or monthly totals can be calculated and emailed to you on a schedule.</li>
+      <li><b>Show a simple dashboard.</b> One tab can show you the numbers that matter at a glance: jobs this week, money owed, new inquiries.</li>
+      <li><b>Power a simple web page.</b> A sheet can sit behind an easy page where customers book a time or your team logs their work, without them ever seeing the spreadsheet.</li>
+    </ol>
+
+    <h3>Why this works so well for small businesses</h3>
+    <ul>
+      <li><b>You already know how to use it.</b> If you can open a spreadsheet, you can see and fix your own information.</li>
+      <li><b>No big monthly software bill.</b> Many custom tools built this way run on Google's free tools.</li>
+      <li><b>You own your information.</b> It lives in your own Google account, not locked inside someone else's app.</li>
+      <li><b>It fits how you work.</b> Instead of changing your business to fit an off-the-shelf program, the tool is built around what you already do.</li>
+    </ul>
+
+    <h3>When it's not the right fit</h3>
+    <p>Google Sheets isn't the answer to everything. Very large businesses, systems that need many people editing the same thing at the same moment, or work that needs special security rules may be better served by other tools. An honest conversation up front will tell you which way to go.</p>
+    <div class="callout">Many of the systems I build use Google Sheets behind the scenes. It's simple, reliable and easy to hand over.</div>
+
+    <div class="cta-box"><p><b>Already keeping a spreadsheet by hand?</b> Let's see what it could do on its own.</p><a class="btn" href="index.html#request">Get a free consultation &rarr;</a></div>
+    <a class="back" href="#top">Back to all articles</a>
+  </div>
+</article>
+
+<article id="website-works" style="--c:#0f9b8c">
+  <div class="read">
+    <div class="tag">Cleaning and landscaping</div>
+    <h2>Your Website Should Work While You're on the Job</h2>
+    <p class="dek">When your hands are full, your phone goes to voicemail. A good website catches those customers for you, collects what you need to know, and makes sure nobody slips through the cracks.</p>
+
+    <p>For cleaning and landscaping companies, the busiest hours for customers calling are often the busiest hours for the work itself. You're mowing, scrubbing or loading the truck, and the phone rings. By the time you call back, some of those people have already called the next company on the list.</p>
+
+    <h3>A website that takes the first step for you</h3>
+    <p>A good website for a service business is less like a brochure and more like a helpful front desk. It should do four jobs:</p>
+    <ol>
+      <li><b>Tell people what you do and where you work,</b> clearly and quickly, especially on a phone.</li>
+      <li><b>Ask the right questions.</b> A cleaning company might ask how many bedrooms and bathrooms. A landscaper might ask about yard size and the type of work.</li>
+      <li><b>Confirm right away.</b> The customer gets an automatic message saying you received their request, so they don't keep shopping around.</li>
+      <li><b>Save everything in one place,</b> so you can look through new requests at the end of the day and reply with a quote.</li>
+    </ol>
+
+    <h3>Don't lose the quote after you send it</h3>
+    <p>Many jobs are lost not because of price, but because nobody followed up. A simple system can keep a list of quotes you've sent and remind you to check in after a few days. That small nudge often makes the difference.</p>
+
+    <h3>Make it easy to find you</h3>
+    <p>Most people search on their phone for something like "house cleaning near me." Setting up your free Google business listing, with your hours, service area and photos, helps you show up in those searches. Asking happy customers for a review after each job builds trust with the next person who finds you.</p>
+
+    <h3>What it adds up to</h3>
+    <ul>
+      <li>Fewer missed customers when you can't pick up the phone</li>
+      <li>Better information up front, so your quotes are faster and more accurate</li>
+      <li>Every request saved in one organized list instead of scattered texts and voicemails</li>
+      <li>More follow-ups, more reviews and more repeat business</li>
+    </ul>
+
+    <div class="cta-box"><p><b>Missing calls while you work?</b> Let's talk about a website that catches them for you.</p><a class="btn" href="index.html#request">Get a free consultation &rarr;</a></div>
+    <a class="back" href="#top">Back to all articles</a>
+  </div>
+</article>
+
+<article id="tutoring-schedule" style="--c:#9b5cf6">
+  <div class="read">
+    <div class="tag">Tutoring centers</div>
+    <h2>Ending the Schedule-Change Text Chaos at Your Tutoring Center</h2>
+    <p class="dek">Every reschedule, sick day and payment question seems to land on your phone. Here's how to stop being the human switchboard.</p>
+
+    <p>If you run a tutoring center or a lesson program, you probably know this pattern. A parent texts that their child is sick. Another wants to move to Thursday. A tutor needs a day off. Someone asks if they've paid for the month. Each message takes a minute, but together they follow you all evening and all weekend.</p>
+
+    <h3>Why it happens</h3>
+    <p>The problem usually isn't the families or the tutors. It's that the schedule, attendance and payments all live in your head, your texts and a few different spreadsheets. When you're the only one who can see the whole picture, every question has to go through you.</p>
+
+    <h3>What a simpler setup looks like</h3>
+    <ul>
+      <li><b>One shared schedule.</b> Sessions, tutors and rooms in one place, set up so the same time slot can't be booked twice.</li>
+      <li><b>Self-serve changes within your rules.</b> Families can request a different time or report an absence through a simple page, instead of texting you directly.</li>
+      <li><b>Attendance that's easy to log.</b> Tutors mark who showed up in seconds, so there's a clear record when questions come up later.</li>
+      <li><b>Invoices that build themselves.</b> At the end of the month, invoices are figured from the sessions that actually happened.</li>
+      <li><b>Automatic reminders.</b> Families get a reminder before each session and a friendly note when a payment is due.</li>
+    </ul>
+    <div class="callout">You stay in control. You set the rules, like how far ahead changes are allowed, and the system follows them every time, without the late-night texts.</div>
+
+    <h3>Protecting student information</h3>
+    <p>Student information deserves care. A good system keeps details private, gives each person access only to what they need, and is tested with made-up sample students before any real information goes in.</p>
+
+    <h3>The real payoff</h3>
+    <p>Fewer interruptions mean more energy for the part of the work that matters: teaching. Families get faster answers, tutors know where they need to be, and your evenings go back to being yours.</p>
+
+    <div class="cta-box"><p><b>Is your phone your scheduling system?</b> Let's find a calmer way to run it.</p><a class="btn" href="index.html#request">Get a free consultation &rarr;</a></div>
+    <a class="back" href="#top">Back to all articles</a>
+  </div>
+</article>
+
+<article id="nonprofit-report" style="--c:#c2410c">
+  <div class="read">
+    <div class="tag">Nonprofits</div>
+    <h2>Nonprofits: Stop Building the Same Report Every Month</h2>
+    <p class="dek">Board meetings, grant updates and funder reports all need numbers. When your information lives in one place, the report can build itself.</p>
+
+    <p>Nonprofit teams are often small, stretched thin and passionate about their mission. So it stings when hours every month go into pulling numbers out of several spreadsheets, sign-in sheets and email threads, just to build a report that looks almost exactly like last month's.</p>
+
+    <h3>Why reporting takes so long</h3>
+    <p>It's rarely the report itself. It's the hunting. Volunteer hours are in one sheet, client visits in another, donations somewhere else, and half of the details came in by email. Before anyone can count anything, someone has to gather it all and clean it up.</p>
+
+    <h3>Fix it at the start, not the end</h3>
+    <p>The secret is to capture information the same way every time, in one place, from the start:</p>
+    <ol>
+      <li><b>Simple intake forms.</b> New clients, volunteers and event sign-ups go through short online forms that save straight into one organized sheet.</li>
+      <li><b>One source of truth.</b> Everyone on the team adds to the same place, so there's only one version of the numbers.</li>
+      <li><b>A live dashboard.</b> One page shows the key numbers, like people served this month or volunteer hours, updated as information comes in.</li>
+      <li><b>Reports on a schedule.</b> A monthly summary builds itself and lands in your inbox, ready to share with your board or funders.</li>
+    </ol>
+    <div class="callout">When the numbers are already organized, a monthly report goes from a long afternoon of copying and pasting to a quick review before you hit send.</div>
+
+    <h3>Handle people's information with care</h3>
+    <p>Nonprofits often hold sensitive details about the people they serve. A well-built system collects only what you need, keeps it private, and limits who can see it. It should also be tested with sample information before real records go in.</p>
+
+    <h3>More time for the mission</h3>
+    <p>Every hour you don't spend copying numbers is an hour back for the people you serve. Simple, reliable tools let a small team do big work without burning out.</p>
+
+    <div class="cta-box"><p><b>Dreading next month's report?</b> Let's make it build itself.</p><a class="btn" href="index.html#request">Get a free consultation &rarr;</a></div>
+    <a class="back" href="#top">Back to all articles</a>
+  </div>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>HireBruce.com &middot; The &ldquo;AI whisperer&rdquo; for non-tech people</div>
+    <div><a href="index.html">Home</a> &middot; <a href="articles.html">Articles</a> &middot; <a href="index.html#request">Free consultation</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
