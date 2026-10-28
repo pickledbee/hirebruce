@@ -587,7 +587,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <div class="ref-msg" id="referMsg" role="status"></div>
       </form>
     </div>
-    <p class="ref-fine">Commissions are earned when your referral becomes a paying client and pays for their project. Referral partners introduce people to me; I handle all pricing and project details. Questions about the program? Call 920-865-5554 or use the request form below.</p>
+    <p class="ref-fine">Commissions are earned when your referral becomes a paying client and pays for their project. Referral partners introduce people to me; I handle all pricing and project details. Questions about the program? Send them through the request form below.</p>
   </div>
 </section>
 
@@ -690,7 +690,6 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <p>What's one task you wish you never had to do by hand again? Tell me about it. The first 15-minute consultation is free.</p>
     <div class="lines">
       <a href="#request"><span>Free consultation</span><strong>Request a time</strong></a>
-      <a href="tel:+19208655554"><span>Phone</span><strong>920-865-5554</strong></a>
       <div><span>Where</span><strong>Online, anywhere</strong></div>
     </div>
   </div>
@@ -753,7 +752,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 var REFERRAL_FORM_URL = 'https://script.google.com/macros/s/AKfycbyR9EMyqFi38JmDQmU4C_CoAzsQYJ1HjRzp69scO8KPtwNS_ttzN7TnnNO8bQT3YIrEMw/exec';
 
 (function () {
-  var fallback = 'Sorry, that didn\'t go through. Please try again in a minute, or call 920-865-5554.';
+  var fallback = 'Sorry, that didn\'t go through. Please wait a minute and try again.';
   try {
     var ref = new URLSearchParams(window.location.search).get('ref');
     if (ref) document.getElementById('rfCode').value = ref.toUpperCase();
@@ -767,7 +766,7 @@ var REFERRAL_FORM_URL = 'https://script.google.com/macros/s/AKfycbyR9EMyqFi38JmD
       Array.prototype.forEach.call(form.elements, function (el) { if (el.name) data[el.name] = el.value.trim(); });
       var problem = check(data);
       if (problem) { msgEl.textContent = problem; return; }
-      if (!REFERRAL_FORM_URL) { msgEl.textContent = 'This form is not connected yet. ' + fallback.replace('Sorry, that didn\'t go through. ', ''); return; }
+      if (!REFERRAL_FORM_URL) { msgEl.textContent = 'This form is not working right now. Please try again later.'; return; }
       var btn = form.querySelector('button'); btn.disabled = true; msgEl.textContent = 'Sending...';
       fetch(REFERRAL_FORM_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
         .then(function () { form.reset(); msgEl.className = 'ref-msg ok'; msgEl.textContent = okText; })
@@ -872,7 +871,7 @@ var REFERRAL_FORM_URL = 'https://script.google.com/macros/s/AKfycbyR9EMyqFi38JmD
       form.reset(); if (refCode) $('prRef').value = refCode;
       msg.className = 'ref-msg ok';
       msg.textContent = 'Thank you! Your request was sent. I\'ll email you back soon.';
-    }, function () { msg.className = 'ref-msg'; msg.textContent = 'Sorry, that didn\'t go through. Please try again in a minute, or call 920-865-5554.'; }, form.querySelector('button[type=submit]'));
+    }, function () { msg.className = 'ref-msg'; msg.textContent = 'Sorry, that didn\'t go through. Please wait a minute and try again.'; }, form.querySelector('button[type=submit]'));
   });
 
   function sendProject(d, ok, fail, btn) {
