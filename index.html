@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hire Bruce</title>
-<meta name="description" content="Websites, simple business systems and family organization tools, set up for you and done entirely online.">
+<title>Hire Bruce | The AI Whisperer for Non-Tech People</title>
+<meta name="description" content="Hire Bruce, the AI whisperer for non-tech people. Simple websites, spreadsheets and automations, set up for you in plain language.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -62,6 +62,7 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: -0.02em; text-wrap: ba
 .hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; padding-top: 84px; padding-bottom: 96px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; padding: 6px 14px 6px 8px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); }
 .eyebrow b { background: var(--teal); color: var(--night); border-radius: 999px; padding: 2px 9px; font-size: 0.75rem; }
+.slogan { font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 18px; color: #fff; }
 .hero h1 { font-weight: 800; font-size: clamp(2.7rem, 6.4vw, 5rem); line-height: 0.98; margin: 22px 0 22px; letter-spacing: -0.035em; }
 .hero h1 { font-size: clamp(3.4rem, 9vw, 7rem); margin-bottom: 14px; }
 .tagline { font-family: var(--display); font-weight: 600; font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 18px; max-width: 24ch; }
@@ -349,6 +350,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   <canvas id="glow" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
+      <p class="slogan">The <span class="grad">&ldquo;AI whisperer&rdquo;</span> for <span style="white-space:nowrap">non-tech people</span></p>
       <span class="eyebrow"><b>Free</b> 15-minute consultation &middot; Online, anywhere</span>
       <h1>Hire <span class="grad">Bruce.</span></h1>
       <p class="tagline">What's one task you wish you never had to do by hand again?</p>
@@ -585,7 +587,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <div class="ref-msg" id="referMsg" role="status"></div>
       </form>
     </div>
-    <p class="ref-fine">Commissions are earned when your referral becomes a paying client and pays for their project. Referral partners introduce people to me; I handle all pricing and project details. Questions about the program? Email stradman100@gmail.com or call 920-865-5554.</p>
+    <p class="ref-fine">Commissions are earned when your referral becomes a paying client and pays for their project. Referral partners introduce people to me; I handle all pricing and project details. Questions about the program? Call 920-865-5554 or use the request form below.</p>
   </div>
 </section>
 
@@ -688,7 +690,6 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
     <p>What's one task you wish you never had to do by hand again? Tell me about it. The first 15-minute consultation is free.</p>
     <div class="lines">
       <a href="#request"><span>Free consultation</span><strong>Request a time</strong></a>
-      <a href="mailto:stradman100@gmail.com"><span>Email</span><strong>stradman100@gmail.com</strong></a>
       <a href="tel:+19208655554"><span>Phone</span><strong>920-865-5554</strong></a>
       <div><span>Where</span><strong>Online, anywhere</strong></div>
     </div>
@@ -699,7 +700,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 
 <footer>
   <div class="wrap">
-    <div>HireBruce.com</div>
+    <div>HireBruce.com &middot; The &ldquo;AI whisperer&rdquo; for non-tech people</div>
     <div>Websites, business systems and family tools</div>
   </div>
 </footer>
@@ -752,7 +753,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 var REFERRAL_FORM_URL = 'https://script.google.com/macros/s/AKfycbyR9EMyqFi38JmDQmU4C_CoAzsQYJ1HjRzp69scO8KPtwNS_ttzN7TnnNO8bQT3YIrEMw/exec';
 
 (function () {
-  var fallback = 'Sorry, that didn\'t go through. Please email stradman100@gmail.com or call 920-865-5554.';
+  var fallback = 'Sorry, that didn\'t go through. Please try again in a minute, or call 920-865-5554.';
   try {
     var ref = new URLSearchParams(window.location.search).get('ref');
     if (ref) document.getElementById('rfCode').value = ref.toUpperCase();
@@ -871,15 +872,9 @@ var REFERRAL_FORM_URL = 'https://script.google.com/macros/s/AKfycbyR9EMyqFi38JmD
       form.reset(); if (refCode) $('prRef').value = refCode;
       msg.className = 'ref-msg ok';
       msg.textContent = 'Thank you! Your request was sent. I\'ll email you back soon.';
-    }, function () { viaEmail(d); msg.className = 'ref-msg ok'; msg.textContent = 'Your email app should open with your request filled in. Just press Send. You can also email stradman100@gmail.com directly.'; }, form.querySelector('button[type=submit]'));
+    }, function () { msg.className = 'ref-msg'; msg.textContent = 'Sorry, that didn\'t go through. Please try again in a minute, or call 920-865-5554.'; }, form.querySelector('button[type=submit]'));
   });
 
-  function viaEmail(d) {
-    var body = 'Request: ' + (d.requestType || '') + '\nName: ' + d.name + '\nEmail: ' + d.email + '\nBusiness: ' + (d.business || '') +
-      '\nPhone: ' + (d.phone || '') + '\nProject type: ' + (d.projectType || '') + '\nBudget: ' + (d.budget || 'Not sure yet') +
-      '\nTimeline: ' + (d.timeline || 'No rush') + '\nHeard about me: ' + (d.source || '') + '\n\n' + d.description;
-    window.location.href = 'mailto:stradman100@gmail.com?subject=' + encodeURIComponent('Project request from ' + d.name) + '&body=' + encodeURIComponent(body);
-  }
   function sendProject(d, ok, fail, btn) {
     if (!REFERRAL_FORM_URL) { fail(); return; }
     if (btn) btn.disabled = true;
