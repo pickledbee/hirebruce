@@ -299,6 +299,19 @@ section.block { padding: 96px 0; }
 .q blockquote { margin: 0 0 14px; font-size: 1.15rem; line-height: 1.5; }
 .q figcaption { font-weight: 700; color: var(--muted); }
 
+
+/* ---------- LEARN ---------- */
+.learn { --c: #9b5cf6; background: var(--white); }
+.learn-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: start; }
+@media (max-width: 900px) { .learn-grid { grid-template-columns: 1fr; gap: 28px; } }
+.learn-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.learn-list li { position: relative; padding-left: 32px; color: var(--muted); }
+.learn-list li::before { content: ""; position: absolute; left: 0; top: 4px; width: 20px; height: 20px; border-radius: 6px; background: #9b5cf6; }
+.learn-list b { color: var(--ink); }
+.learn-form { border: 1px solid var(--line); position: relative; }
+.learn-form button { background: linear-gradient(100deg, #9b5cf6, #6d3fe0); color: #fff; }
+.soon { justify-self: start; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: #efe7ff; color: #6d3fe0; padding: 4px 12px; border-radius: 999px; }
+
 /* ---------- HOW / ABOUT ---------- */
 .how { --c: var(--coral); }
 .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -349,6 +362,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
       <li><a href="#business">Services</a></li>
       <li><a href="#calculator">Time Calculator</a></li>
       <li><a href="#work">My Work</a></li>
+      <li><a href="#learn">Learn</a></li>
       <li><a href="#referrals">Referrals</a></li>
       <li class="keep"><a class="art" href="articles.html">Articles</a></li>
       <li><a class="cta" href="#request">Free Consultation</a></li>
@@ -526,6 +540,37 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
         <div class="body"><h3>Fiddle Music Store</h3><p>An online store for fiddle and violin sheet music.</p><div class="tags"><span>Online store</span><span>Digital products</span></div><span class="go">Visit site &rarr;</span></div>
       </a>
     </div>
+  </div>
+</section>
+
+<section class="block learn" id="learn">
+  <div class="wrap learn-grid">
+    <div>
+      <div class="head" style="margin-bottom:20px">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5Z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div>
+        <div><div class="kicker">Learn to build it yourself</div><h2>Rather do it yourself? I'll show you how.</h2></div>
+      </div>
+      <p class="intro" style="margin:0 0 22px">Not everyone wants to hire someone. Some people would rather learn. I'm opening a learning community where we build real time-saving tools together, step by step, in plain language.</p>
+      <ul class="learn-list">
+        <li><b>Free video tutorials</b> showing a real problem and the simple tool that fixes it.</li>
+        <li><b>Build Time-Saving Tools With Bruce:</b> a members' community with full step-by-step lessons, ready-to-use templates and help when you get stuck.</li>
+        <li><b>No tech background needed.</b> If you can use a spreadsheet, you can do this.</li>
+      </ul>
+    </div>
+    <form class="ref-form learn-form" id="waitForm" novalidate>
+      <span class="soon">Opening soon</span>
+      <h3>Join the early list</h3>
+      <p>Be first to hear when the community opens, and get the founding-member price.</p>
+      <div class="row2">
+        <div><label for="wlName">Your name</label><input id="wlName" name="name" type="text" autocomplete="name"></div>
+        <div><label for="wlEmail">Email</label><input id="wlEmail" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div><label for="wlLearn">What would you most like to learn to build?</label>
+        <select id="wlLearn" name="learn"><option value="">Choose one</option><option>Automatic reminders</option><option>Invoices and payment tracking</option><option>Customer lists and follow-ups</option><option>Forms and reports that build themselves</option><option>A simple website</option><option>Family tools like chore charts</option><option>Something else</option></select></div>
+      <div class="hp" aria-hidden="true"><label for="wlWebsite">Leave this empty</label><input id="wlWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <button type="submit">Add me to the list</button>
+      <div class="ref-msg" id="waitMsg" role="status"></div>
+    </form>
   </div>
 </section>
 
@@ -885,6 +930,19 @@ var REFERRAL_FORM_URL = 'https://script.google.com/macros/s/AKfycbyR9EMyqFi38JmD
       msg.textContent = 'Thank you! Your request was sent. I\'ll email you back soon.';
     }, function () { msg.className = 'ref-msg'; msg.textContent = 'Sorry, that didn\'t go through. Please wait a minute and try again.'; }, form.querySelector('button[type=submit]'));
   });
+
+  // ---------- Community waitlist ----------
+  (function () {
+    var f = $('waitForm'), m = $('waitMsg');
+    f.addEventListener('submit', function (e) {
+      e.preventDefault(); m.className = 'ref-msg';
+      var d = { type: 'waitlist', name: $('wlName').value.trim(), email: $('wlEmail').value.trim(), learn: $('wlLearn').value, website: $('wlWebsite').value, refCode: refCode, source: 'Website' };
+      if (d.website) return;
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) { m.textContent = 'Please enter a valid email.'; return; }
+      sendProject(d, function () { f.reset(); m.className = 'ref-msg ok'; m.textContent = "You're on the list! Check your email for a quick hello from me."; },
+        function () { m.textContent = 'Sorry, that didn\'t go through. Please wait a minute and try again.'; }, f.querySelector('button[type=submit]'));
+    });
+  })();
 
   function sendProject(d, ok, fail, btn) {
     if (!REFERRAL_FORM_URL) { fail(); return; }
